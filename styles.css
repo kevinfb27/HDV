@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+background-color: #061218;
+font-family:'Lora', serif;
+overflow-x: hidden;
+
+}
+.wrapper
+{
+
+width: 100vw;
+height: 100vh;
+background-color: #061218;
+color: white
+ }
+.navbar{
+     
+display: flex;
+justify-content: space-between;
+padding: 2em;
+/* background-color:#0b1e28; */
+
+}
+
+.brand{
+    margin-top: -7px;
+    color: white;
+}
+
+.brand span{
+ color:#129ab6;
+
+}
+
+.menu{
+
+    display: flex;
+    width: 50vw;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+.menu li{
+
+    list-style: none;
+    
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-family:'Lora', serif;
+    font-size: large;
+}
+
+.menu .active{
+    color: #0d7d95;
+}
+.menu a:hover{
+
+    background-color:#06596b ;
+    color:#061218;
+    transition:ease-in .4s;
+}
+.info-content{
+
+    padding: 20px;
+}
+.main{
+    
+    margin: 0 auto;
+    width: 80vw ;
+    height: 70vh;
+
+    display: grid;
+    grid-template-columns:repeat(2,1fr) ; 
+    align-items: center;
+    
+}
+
+h1{
+font-size: 3em;
+color: #ffff;
+
+}
+span{
+
+color:#129ab6;
+
+}
+.download-cv{
+
+padding: 10px 20px;
+background-color: #129ab6;
+border: none;
+border-radius: 20px;
+margin-top: 10px;
+cursor: pointer;
+box-shadow: 1px 3px 11px -5px rgba(102, 231, 200, .69);
+
+}
+.download-cv:hover{
+
+background-color: white;
+box-shadow: none;
+
+
+}
+.main img{
+    height: 510px;
+    width: 350px;
+    border: 7px solid #129ab6;
+    z-index: 1;
+}
+.about{
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100vw;
+    align-items: center;
+
+}
+
+.about img{
+   width: 40vw;
+    grid-column: 1/5;
+
+}
+.about-info{
+
+    grid-column: 5/10;
+    padding: 3em;
+}
+.about-info h2{
+
+    font-size: 2em;
+    color: #061218;
+
+}
+.divider{
+
+    height: 5px;
+    width: 60px;
+    background-color: aqua;
+    margin-bottom: 2em;
+    margin-top: 5px;
+}
+
+.portfolio{
+color: white;
+    width: 100vw;
+    background-color: #061218;
+}
+
+.portfolio-headings{
+
+width: 100vw;
+
+padding: 5em;
+
+}
+.portfolio-headings h2{
+    
+    font-size: 2.5em;
+   
+}
+
+.portfolio .container {
+
+width: 80vw;
+height: 80vh;
+margin: 0 auto;
+display: flex;
+
+justify-content: center;
+}
+.card  {
+    color: white;
+    width: 300px;
+    height: 350px;
+    background-color: rgb(13, 21, 88);
+    margin: 1em ;
+}
+.card_img1{
+
+width: 100%;
+height: 150px;
+background-image: url(img/Captura.PNG);
+background-size: cover;
+}
+.card_img2{
+
+    width: 100%;
+    height: 150px;
+    background-image: url(img/Captura2.PNG);
+    background-size: cover;
+    }
+.card_img3{
+
+        width: 100%;
+        height: 150px;
+        background-image: url(img/Captura3.PNG);
+        background-size: cover;
+  }
+.card-title{
+    
+    padding: 20px;
+}
+
+.project-links{
+
+display: flex;
+justify-content: space-evenly;
+
+}
+.project-links a{
+
+    color: #ffff;
+    text-decoration: none;
+
+}
+.project-links i {
+
+    font-size: 1.5em;
+}
+.card .Project-details{
+
+    
+    margin: 0 auto;
+    
+    margin: 1em;
+    width: 70%;
+    
+    
+    
+}
+.card .Project-details a{
+ text-decoration: none;
+ color: #061218;
+ text-transform: uppercase;
+}
+.proyect-details-content{
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1em;
+
+}
+.contact-section {
+    padding: 3em;
+    margin: 0 auto;
+    color: white;
+    background-color: #061218;
+
+}
+
+.contact-headings h2{
+
+    font-size: 3em;
+
+
+}
+.contact-form{
+
+    margin: 0 auto;
+    display: flex;
+    
+    justify-content: center;
+
+
+
+
+    
+}
+
+
+.form{
+
+display: flex;
+flex-direction: column;
+width: 30vw;
+margin-top: 2em;
+
+}
+.form input{
+
+ padding: 10px 20px;
+ margin-bottom: 1em;
+ 
+ background: none;
+ border: none;
+ border-bottom: 1px solid white;
+
+ color: white;
+ 
+
+}
+.form textarea{
+
+    height: 150px;
+    background: none;
+    color: white;
+    padding: 1.5em;
+    border: 1px solid white;
+
+}
+.btn-submit{
+    padding: 10px 20px;
+    margin: 1em;
+    border: none;
+    text-transform: uppercase;
+    background-color: #129ab6;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 1px 3px 11px -5px rgba(102, 231, 200, .69);
+    
+}
+.btn-submit:hover{
+
+    background-color: white;
+    box-shadow: none;
+    
+    
+    }
+
+
+.footer{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 200px;
+        background-color: #129ab6;
+    }
+.footer-content h2{
+
+        font-size: 3em;
+
+    }
+.footer-content h5{
+
+        font-size: 1.5em;
+
+    }
+.sotial-network{
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin-top: 1em;
+    background-color: #129ab6;
+
+}
+
+.sotial-network i{
+color: black;
+font-size: 1.5em;
+
+}
+.contenedor{
+
+    max-width: 1200px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.contenedor .contenedor-items{
+
+margin-top: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) ;
+grid-gap:30px;
+grid-row-gap:30px ;
+width: 100%;
+transition: 0.3s;
+
+
+}
+.contenedor .contenedor-items .item{
+    max-width: 200px;
+    padding: 10px;
+    margin: auto;
+    background-color:#405363;
+    
+    border-radius: 5px;
+    padding: 20px;
+    transition: 0.3s;
+}
+.contenedor-items .item:hover{
+    box-shadow:  0 0 10px #fbfbfb;
+    border-radius:5px;
+    scale: 1.05;
+    
+}
+
+.contenedor-items .item .img-item{
+
+    width:160px;
+    height: 120px;
+}
+.contenedor-items .item .titulo-item{
+
+    display: block;
+    font-weight: bold;
+   
+    color: white;
+    text-align:center ;
+    text-transform: uppercase;
+}
+.contenedor-items .item .precio-item{
+
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+.contenedor-items .item .boton-item{
+    display: block;
+    margin: 10px auto;
+    border: none;
+    background:#0d7d95;
+    color: white;
+    padding: 5px 15px;
+    border-radius:5px;
+    cursor: pointer;
+} 
+
+.contenedor-items .item .Description{
+
+    color: white;
+}
