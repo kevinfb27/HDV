@@ -1,0 +1,94 @@
+CREATE DATABASE bd_curriculum;
+
+\c bd_curriculum;
+
+CREATE TABLE tmstatus (
+    cods SERIAL PRIMARY KEY,
+    dstatus VARCHAR(255)
+);
+
+INSERT INTO tmstatus (dstatus) VALUES
+('activo'),
+('eliminado'),
+('en curso'),
+('finalizado');
+
+CREATE TABLE tmnivel_estudio (
+    codne SERIAL PRIMARY KEY,
+    dnivel_est VARCHAR(255),
+    fkcods_ne INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+INSERT INTO tmnivel_estudio (dnivel_est, fkcods_ne) VALUES
+('Bachiller', 1),
+('Técnico', 1),
+('Tecnólogo', 1),
+('Profesional', 1);
+
+
+CREATE TABLE tmestado_civil (
+    codec SERIAL PRIMARY KEY,
+    destado_civil VARCHAR(255),
+    fkcods_ec INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+INSERT INTO tmestado_civil (destado_civil, fkcods_ec) VALUES
+('Soltero', 1),
+('Casado', 1),
+('Viudo', 1),
+('Divorciado', 1);
+
+
+CREATE TABLE tmref_familiar (
+    codref_fam SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    edad INTEGER,
+    fkcodec_refam INTEGER REFERENCES tmestado_civil(codec) on update cascade on delete restrict,
+    fkcods_refam INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+CREATE TABLE tmref_laboral (
+    codref_lab SERIAL PRIMARY KEY,
+    nombre_empresa VARCHAR(255),
+    direccion VARCHAR(255),
+    tiempo VARCHAR(255),
+    cargo VARCHAR(255),
+    fkcods_reflab INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+CREATE TABLE tminfo_acad (
+    codacademi SERIAL PRIMARY KEY,
+    fknivel_estudio INTEGER REFERENCES tmnivel_estudio(codne),
+    fkcods_rinfacad INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+CREATE TABLE tminfo_perso (
+    codperso SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    edad INTEGER,
+    fkcodec_infper INTEGER REFERENCES tmestado_civil(codec) on update cascade on delete restrict,
+    fkcods_infper INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+CREATE TABLE tminfo_lab (
+    codlaboral SERIAL PRIMARY KEY,
+    fkrefe_familiar INTEGER REFERENCES tmref_familiar(codref_fam) on update cascade on delete restrict,
+    fkref_laboral INTEGER REFERENCES tmref_laboral(codref_lab) on update cascade on delete restrict,
+    fkcods_inflab INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
+
+
+CREATE TABLE tdintegrante (
+    codinte SERIAL PRIMARY KEY,
+    fkcodperso INTEGER REFERENCES tminfo_perso(codperso) on update cascade on delete restrict,
+    fkcodacademi INTEGER REFERENCES tminfo_acad(codacademi) on update cascade on delete restrict,
+    fkcodlaboral INTEGER REFERENCES tminfo_lab(codlaboral) on update cascade on delete restrict,
+    fkcods_integ INTEGER REFERENCES tmstatus(cods) on update cascade on delete restrict
+);
