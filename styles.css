@@ -6,11 +6,14 @@ padding: 0;
 box-sizing: border-box;
 }
 body{
+   
+    
 background-color: #061218;
 font-family:'Lora', serif;
 overflow-x: hidden;
 
 }
+
 .wrapper
 {
 
@@ -20,10 +23,12 @@ background-color: #061218;
 color: white
  }
 .navbar{
-     
+    background-color: #061218;  
 display: flex;
 justify-content: space-between;
-padding: 2em;
+padding: 20px;
+padding-top: 30px;
+padding-bottom: 20px;
 /* background-color:#0b1e28; */
 
 }
@@ -43,7 +48,7 @@ padding: 2em;
     display: flex;
     width: 50vw;
     justify-content: space-around;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 .menu li{
 
@@ -367,9 +372,10 @@ font-size: 1.5em;
 
 }
 .contenedor{
-
+    
     max-width: 1200px;
     padding: 10px;
+    padding-bottom: 90px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -433,7 +439,7 @@ transition: 0.3s;
     background:#0d7d95;
     color: white;
     padding: 5px 15px;
-    border-radius:5px;
+    border-radius:20px;
     cursor: pointer;
 } 
 
